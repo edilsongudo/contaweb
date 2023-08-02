@@ -367,3 +367,52 @@ a {
 .logo {
   width: 100%;
 }
+
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--nav-background);
+  border: 2px solid var(--nav-background);
+  border-radius: 3px;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff;
+  transition: .25s;
+}
+
+.card:hover {
+  border-color: var(--accent-color);
+}
+
+.card .material-symbols-rounded {
+  color: var(--accent-color);
+  font-size: 4.5rem;
+}
+
+@media (max-width: 640px) {
+  .cards {
+    justify-content: center;
+  }
+
+  .card {
+    width: 160px;
+    height: 160px;
+    gap: 10px;
+  }
+  .card .material-symbols-rounded {
+    font-size: 2.5rem;
+  }
+}
