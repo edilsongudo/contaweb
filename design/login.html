@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0..1,0" />
+    <link href="{% static 'dependencies/fontawesome-free-5.15.2-web/css/all.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap-reverse;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="login-container mt-10vh">
+        <div>
+          <img src="assets/img/undraw_enter_uhqk.svg" width="300px" alt="">
+        </div>
+        <div>
+          <form action="">
+            <h1>Conta Web</h1>
+            <label for="user">Usuário</label>
+            <input type="text" name="user" id="user">
+            <label for="user">Senha</label>
+            <input type="password" name="password" id="password">
+            <label for="user">Lembrar Usuário</label>
+            <input type="checkbox" name="user-remember" id="user-remember">
+            <p><button type="submit">Login</button></p>
+            <p><a href="#">Esqueci minha senha</a></p>
+            <div class="logo-container"><img class="logo" src="assets/img/A3SIL-FlatWhiteLogo.svg" alt="logo"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
