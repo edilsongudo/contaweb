@@ -5,7 +5,8 @@
 }
 
 .container {
-
+  max-width: 1596px;
+  margin: 0 auto;
 }
 
 @media (max-width: 640px) {
@@ -52,10 +53,6 @@ body {
 
 .input:focus, input:focus {
   border: 1px solid var(--accent-color);
-}
-
-input[type="file"] {
-  all: unset
 }
 
 input[required] + label::after {
@@ -473,11 +470,12 @@ button.alt:hover {
 /* Dropzone */
 input[type=file]::file-selector-button {
   margin-right: 20px;
+  margin: 3px;
   border: none;
   background: var(--accent-color);
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: #fff;
+  padding: 8px 16px;
+  border-radius: 3px;
+  color: var(--accent-color-contrast);
   cursor: pointer;
   transition: background .2s ease-in-out;
 }
@@ -527,7 +525,7 @@ input[type=file]::file-selector-button:hover {
 }
 
 .table-container {
-  max-width: 940px;
+  /* max-width: 940px; */
   margin: 0 auto;
   margin-bottom: 50px;
 }
