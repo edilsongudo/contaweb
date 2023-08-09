@@ -10,7 +10,7 @@
 
 @media (max-width: 640px) {
   .container {
-    width: 96%;
+    width: 98%;
     margin: 0 auto;
   }
 }
@@ -32,6 +32,7 @@
 
 :root {
     --accent-color: #5865F2;
+    --accent-hover-color: #4752C4;
     --accent-color-lighter: rgba(175, 150, 255, 0.25);
     --accent-color-contrast: #fff; 
     --background-color: #313338;
@@ -41,7 +42,7 @@
   }
 
 /* Input */
-.input, input[type="text"], input[type="email"], input[type="password"] {
+.input, input {
     box-sizing: border-box;
     width: 100%;
     height: 40px;
@@ -57,8 +58,12 @@
     margin-bottom: 10px;
 }
   
-.input:focus, form input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+.input:focus, input:focus {
     border: 1px solid var(--accent-color);
+}
+
+input[required] + label::after {
+  content: " *";
 }
 
 body {
@@ -112,11 +117,11 @@ body {
     font-size: 20px;
   }
   
-  .nav-mobile .link span {
+  .nav-mobile span {
     font-size: 26px;
   }
   
-  .nav-mobile .link span.text {
+  .nav-mobile span.text {
     font-size: 10px;
   }
   
@@ -309,8 +314,28 @@ h1, h2, h3, h4, h5, h6 {
 form {
   max-width: 640px;
   margin: 30px auto;
-  padding: 20px;
   border-radius: 3px;
+}
+
+.align-left{
+  margin-right: auto;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.mw-640 {
+  max-width: 640px;
+}
+
+input.w-half {
+  width: 50%;
+}
+
+.flex {
+  display: flex; 
+  justify-content: space-evenly; 
+  gap: 10px; 
+  align-items: center;
 }
 
 p {
@@ -345,6 +370,15 @@ a {
   width: 400px;
 }
 
+.alt {
+  border: 1.5px solid var(--accent-color);
+  background: transparent;
+}
+
+button.alt:hover {
+  background: transparent;
+}
+
 @media (max-width: 640px) {
   .button, button, *[type="submit"] {
     width: 100%;
@@ -357,6 +391,29 @@ a {
 
 .button i {
   color: var(--accent-color-contrast);
+}
+
+.download-cadastro-container {
+  background: var(--nav-background);
+  padding: 15px;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.download-cadastro {
+  width: 150px;
+  font-size: 0.8rem;
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.download-cadastro:hover {
+  background: transparent;
+  border: 1px solid var(--accent-hover-color);
+  color: var(--accent-hover-color);
 }
 
 /* Logo */
@@ -415,4 +472,92 @@ a {
   .card .material-symbols-rounded {
     font-size: 2.5rem;
   }
+}
+
+.color-white {
+  color: #fff;
+}
+
+
+
+/* Dropzone */
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: var(--accent-color);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: var(--accent-hover-color);
+}
+
+.drop-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  border-radius: 3px;
+  border: 2px dashed #555;
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+  margin-bottom: 200px;
+}
+
+.drop-container:hover {
+  border-color: var(--accent-hover-color);
+}
+
+.drop-container:hover .drop-title {
+  color: var(--accent-hover-color);
+}
+
+.drop-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color .2s ease-in-out;
+}
+
+.drop-container.drag-active {
+  background: #eee;
+  border-color: #111;
+}
+
+.drop-container.drag-active .drop-title {
+  color: #222;
+}
+
+.table-container {
+  max-width: 940px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+
+/* Change the color of the odd rows */
+#myTable tr:nth-child(odd) {
+  background-color: var(--nav-background);
+}
+
+/* Change the color of the even rows */
+#myTable tr:nth-child(even) {
+  background-color: var(--nav-background);
+}
+
+/* Change the hover color */
+#myTable tr:hover {
+  background-color: var(--nav-background);
+}
+
+.table-container input[type="search"] {
+  display: none;
 }

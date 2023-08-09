@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ContaWeb | Informação</title>
+    <title>ContaWeb | Gestão de Cadastros</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0..1,0" />
     <link href="{% static 'dependencies/fontawesome-free-5.15.2-web/css/all.css' %}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
     <link rel="stylesheet" href="style.css">
 
     <div class="navv">
@@ -95,12 +98,64 @@
     <main class="main" style="position: relative;">
       <div class="container">
         <div class="mt-10vh">
-          <h1>Olá Vlad</h1>
-          <p>Veja algumas informações importantes do sistema SiS!</p>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed quod dolorum accusamus earum laborum veniam doloremque, impedit cupiditate quidem autem. Aperiam odio at quod accusantium ipsa a dignissimos dolorem.</p>
-          <button>Iniciar</button>
+          <h1>Gestão do Cadastro</h1>
+          <p><b>Atenção as informações importantes:</b>
+            <br><br>- as atualizações de cadastro só são refletidas nos Relatórios antes de sua emissão, no dia XX deste mês. Atualizações após esta data refletirão nos relatórios do mês subsequente.																								
+            <br><br>- nunca inserir ou excluir qualquer coluna na planilha modelo. Caso não utilize a coluna, deixar em branco.														
+          </p>
+
+          <div class="download-cadastro-container">
+            <label for="download-cadastro">Download do Cadastro:</label>
+            <a class="button download-cadastro" id="download-cadastro">
+              <span class="material-symbols-rounded">draft</span>
+              Baixar Arquivo
+            </a>
+          </div>
+
+          <div class="table-container">
+            <table id="myTable">
+              <thead>
+                  <tr>
+                      <th>Nome</th>
+                      <th>Sobrenome</th>
+                      <th>Idade</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>João</td>
+                      <td>Silva</td>
+                      <td>30</td>
+                  </tr>
+                  <tr>
+                      <td>Maria</td>
+                      <td>Pereira</td>
+                      <td>25</td>
+                  </tr>
+                  <!-- outros dados... -->
+              </tbody>
+            </table>          
+          </div>
+
+          <h2>Upload do Cadastro</h2>
+          <form action="" method="POST">
+            <label for="images" class="drop-container" id="dropcontainer">
+              <span class="drop-title">Solte o arquivo aqui</span>
+              ou
+              <input type="file" id="images" accept="image/*" required>
+            </label>            
+          </form>
+
         </div>
       </div>
     </main>
+    <script>
+      $('#myTable').DataTable({
+          paging: false,
+          search: false,
+          info: false
+      });
+    </script>
+    <script src="gestao_cadastro.js"></script>
 </body>
 </html>
