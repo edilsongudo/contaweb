@@ -15,21 +15,6 @@
   }
 }
 
-/* :root {
-    --backgroundcolor: #313338;
-    --backgroundcolor2: #2B2D31;
-    --cardcolor: #1e2124;
-    --fontcolor: #949BA4;
-    --titlecolor: #f0f0f0;
-    --bordercolor: #1e2124;
-    --accentcolor: #5865F2;
-    --accenthovercolor: #4752C4;
-    --accentlighter: #b4cdff;
-    --accentlighter2: #dce8ff;
-    --accentcontrast: #fff;
-    --checkboxcolor: #5865F2;
-} */
-
 :root {
     --accent-color: #5865F2;
     --accent-hover-color: #4752C4;
@@ -41,36 +26,40 @@
     --nav-color: #fff;
   }
 
-/* Input */
-.input, input {
-    box-sizing: border-box;
-    width: 100%;
-    height: 40px;
-    border-radius: 3px;
-    padding-left: 12px;
-    font-size: 14px;
-    font-weight: normal;
-    border: 1px solid #1E1F22;
-    transition: border-color 150ms ease-in-out 0s;
-    outline: none;
-    color: #f0f0f0;
-    background-color: #1E1F22;  
-    margin-bottom: 10px;
-}
-  
-.input:focus, input:focus {
-    border: 1px solid var(--accent-color);
-}
-
-input[required] + label::after {
-  content: " *";
-}
-
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--background-color);
   background-color: var(--background-color);
   color: var(--font-color);
+}
+
+/* Input */
+.input, input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  padding-left: 12px;
+  font-size: 14px;
+  font-weight: normal;
+  border: 1px solid #1E1F22;
+  transition: border-color 150ms ease-in-out 0s;
+  outline: none;
+  color: #f0f0f0;
+  background-color: #1E1F22;  
+  margin-bottom: 10px;
+}
+
+.input:focus, input:focus {
+  border: 1px solid var(--accent-color);
+}
+
+input[type="file"] {
+  all: unset
+}
+
+input[required] + label::after {
+content: " *";
 }
 
 .navv {
@@ -462,12 +451,13 @@ button.alt:hover {
 @media (max-width: 640px) {
   .cards {
     justify-content: center;
+    gap: 15px;
   }
 
   .card {
-    width: 160px;
-    height: 160px;
-    gap: 10px;
+    width: 150px;
+    height: 150px;
+    font-size: 0.85rem;
   }
   .card .material-symbols-rounded {
     font-size: 2.5rem;
