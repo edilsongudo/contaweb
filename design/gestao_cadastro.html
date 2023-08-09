@@ -121,28 +121,30 @@
           </form>
 
           <div class="table-container">
-            <table id="myTable">
+            <table id="myTable" class="">
               <thead>
                   <tr>
-                      <th>Nome</th>
-                      <th>Sobrenome</th>
-                      <th>Idade</th>
+                      <th>Informação da última importação</th>
+                      <th>Tipo de arquivo</th>
+                      <th>Data</th>
+                      <th>Hora início</th>
+                      <th>Hora fim</th>
+                      <th>Status</th>
+                      <th>Observação</th>
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <td>João</td>
-                      <td>Silva</td>
-                      <td>30</td>
-                  </tr>
-                  <tr>
-                      <td>Maria</td>
-                      <td>Pereira</td>
-                      <td>25</td>
-                  </tr>
-                  <!-- outros dados... -->
+                <tr>
+                  <td>Cadastro Fevereiro 2023</td>
+                  <td>CSV</td>
+                  <td>2/22/2023</td>
+                  <td>15:11</td>
+                  <td>15:13</td>
+                  <td>--</td>
+                  <td>--</td>
+                </tr>
               </tbody>
-            </table>          
+            </table>               
           </div>
 
         </div>
@@ -152,7 +154,8 @@
       $('#myTable').DataTable({
           paging: false,
           search: false,
-          info: false
+          info: false,
+          // scrollX: true
       });
     </script>
     <script src="gestao_cadastro.js"></script>
